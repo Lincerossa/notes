@@ -12,7 +12,6 @@
 	const proxy = new Proxy({},handler)
 ```
 
-
  **Common Object Property Lookup Behavior**
 ```
 	const user = {
@@ -24,7 +23,6 @@
 ```
 
 **Proxied Object Property Lookup Behavior**
-
 ```
 	const user = {
 		name: 'marcello',
@@ -47,12 +45,11 @@
 	myFirstProxy.test // the key doesn't exist
 ```
 
-
 **EXAMPLE**
 
 We could, for example, simulate a **fake private property** of the object
 
-			1. We create an object
+  1. We create an object
 ```
 const object = {
 	_private : 'private',
@@ -60,7 +57,7 @@ const object = {
 }
 ```
 
-	2.  We create the method get of the Proxy object
+  2. We create the method get of the Proxy object
 ```
 const handleProxy = {
 	get: (target, name) => {
@@ -70,17 +67,17 @@ const handleProxy = {
 }
 ```
 
-	3. We create a function (a **thunk** in this case) that will be used when we need to proxy an object
+  3. We create a function (a **thunk** in this case) that will be used when we need to proxy an object
 ```
 	const getProxiedObject = (obj, method) => new Proxy(obj, method)
 ```
 
-	4. We call that function 
+  4. We call that function 
 ```
 	const proxiedObject = getProxiedObject(object, handleProxy)
 ```
 
-	5.  Let’s try to access it!
+  5.  Let’s try to access it!
 ```
 	proxiedObject._private //null
 	proxiedObject.public // public
