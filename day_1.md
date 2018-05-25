@@ -83,5 +83,5 @@ const handleProxy = {
 	proxiedObject.public // public
 
 	...then the magic!
-	proxiedObject._blablabla //public	
+	proxiedObject._blablabla //null	
 ```
