@@ -17,6 +17,7 @@ I have read so many times the difference between FP an OOP, but every definition
 
 2. React and its declarative approach
 When it comes to using react, it pushes you in the right direction:
+
   * avoiding side effects 
 	* avoid mutations
 	* using only one source of thruth
