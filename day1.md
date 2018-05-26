@@ -1,16 +1,17 @@
 # Proxy
 * The Proxy is a new feature of es6.
-* Is an object. His constructor receive two arguments:
+* It’s an object. His constructor receives two arguments:
 	1. {} -> object that will be “processed” by the Proxy object
-	2. handler
-	-> object that has specific methods used by the Proxy. (es. get, set, …)
-	-> **get** methods receive two arguments:
-		a] target: is the object proxied
-		b] name: is the property that the proxy try to access it
+	2. handler:
+	—  It’s an object that has specific methods used by the Proxy. (es. get, set, …)
+	— The **get** methods, for example, receives two arguments:
+		a] target: proxied object.
+		b] name: property that the proxy tries to access
 
 ```
 	const proxy = new Proxy({},handler)
 ```
+
 
  **Common Object Property Lookup Behavior**
 ```
@@ -23,6 +24,7 @@
 ```
 
 **Proxied Object Property Lookup Behavior**
+
 ```
 	const user = {
 		name: 'marcello',
@@ -45,11 +47,12 @@
 	myFirstProxy.test // the key doesn't exist
 ```
 
+
 **EXAMPLE**
 
 We could, for example, simulate a **fake private property** of the object
 
-  1. We create an object
+	1. We create an object
 ```
 const object = {
 	_private : 'private',
@@ -57,7 +60,7 @@ const object = {
 }
 ```
 
-  2. We create the method get of the Proxy object
+	2.  We create the method get of the Proxy object
 ```
 const handleProxy = {
 	get: (target, name) => {
@@ -67,21 +70,21 @@ const handleProxy = {
 }
 ```
 
-  3. We create a function (a **thunk** in this case) that will be used when we need to proxy an object
+	3. We create a function (a **thunk** in this case) that will be used when we need to proxy an object
 ```
 	const getProxiedObject = (obj, method) => new Proxy(obj, method)
 ```
 
-  4. We call that function 
+	4. We call that function 
 ```
 	const proxiedObject = getProxiedObject(object, handleProxy)
 ```
 
-  5.  Let’s try to access it!
+	5.  Let’s try to access it!
 ```
 	proxiedObject._private //null
 	proxiedObject.public // public
 
 	...then the magic!
-	proxiedObject._blablabla //null	
+	proxiedObject._blablabla //public	
 ```
