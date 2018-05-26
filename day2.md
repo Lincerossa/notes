@@ -8,6 +8,10 @@ My learning curve has been anything but linear, and often I felt really stuck, b
 
 Now I try to describe what happened:
 
+
+
+
+
 1.  The real meaning of Functional Programming:
 
   I have read so many times the difference between FP an OOP, but every definition was so meaningless for me until I got the real meaning of these points:
@@ -21,9 +25,12 @@ Now I try to describe what happened:
   - testability
 
 
+
+
 2. React and its declarative approach
 
   When it comes to using react, it pushes you in the right direction:
+
 
   * avoiding side effects 
 	* avoid mutations
@@ -34,12 +41,18 @@ Now I try to describe what happened:
 	* modularity
 	* scalability
 	* implementing really often the map / reduce / filter / ecc methods of the array (still in the declarative direction)
-	
+
+
+
+
 3. Functional programming 
 
   The real meaning of FP is the following one: of **a declarative programming paradigm**.
 
   Functional programming -> Declarative approach -> React 
+
+
+
 
 4. Why should I love react?
 
