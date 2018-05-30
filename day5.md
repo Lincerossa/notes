@@ -1,11 +1,11 @@
 # Proxy (another tip)
 
 ## Intro
-Sometimes it takes a while to prevent your application for breaking when it comes to accessing many objects and theirs properties!
+Sometimes it takes a while to prevent your application from breaking when it comes to accessing many objects and theirs properties!
 
 ## Problem
 
-* example of the situation:
+* This is an example of the situation I want to avoid
 
 ```
 	const people = contry && 
@@ -15,7 +15,7 @@ Sometimes it takes a while to prevent your application for breaking when it come
 
 ```
 
-* but I would like just to write this (without breaking):
+* because I would like just to write this (without breaking everything):
 
 ```
 	const people = getPeople(country.region.city)
@@ -37,7 +37,7 @@ const countries = {
 		}
 	},
 	france:{
-		IDontKnow: {
+		someRandomRegionLol: {
 			paris: 4
 		}
 	}
@@ -65,6 +65,8 @@ proxiedCountries.italy.lombardia.milan // 12
 
 
 proxiedCountries.italy.friuli // Proxy {italy: {…}, france: {…}}
+
+proxiedCountries.a.b.c.cat.miao // Proxy {italy: {…}, france: {…}}
 
 proxiedCountries.a.b.c.italy.lombardia.milan // 12
 ```
